@@ -3,8 +3,8 @@ class Machine < ApplicationRecord
   belongs_to :owner
   has_many :snacks
 
-  def average_price
-    snacks.average(:price).to_i.round(2)
+  def snacks_average_price
+    snacks.average(:price).to_f.round(2)
   end
 
 end

@@ -17,7 +17,6 @@ feature 'When a user visits a vending machine show page' do
 
   scenario 'they see all the snacks for a machine' do
     visit machine_path(@dons)
-    save_and_open_page
     expect(page).to have_content(@snack_1.name)
     expect(page).to have_content(@snack_1.price)
     expect(page).to have_content(@snack_2.name)
@@ -28,13 +27,7 @@ feature 'When a user visits a vending machine show page' do
 
   scenario 'they see the average snack price' do
     visit machine_path(@dons)
-    save_and_open_page
-    expect(page).to have_content(@snack_1.name)
-    expect(page).to have_content(@snack_1.price)
-    expect(page).to have_content(@snack_2.name)
-    expect(page).to have_content(@snack_2.price)
-    expect(page).to have_content(@snack_3.name)
-    expect(page).to have_content(@snack_3.price)
+    expect(page).to have_content("Average Price 2.5")
   end
 
 
